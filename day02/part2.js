@@ -15,7 +15,6 @@ print(
         })
       })
       .flat()
-    let max = ["red", "green", "blue"].map(c => cubes.filter(cube => cube.colour === c).sort((a, b) => b.count - a.count)[0].count)
-    return max[0] * max[1] * max[2]
+    return ["red", "green", "blue"].map(c => cubes.filter(cube => cube.colour === c).max("count")).product()
   }).sum()
 )

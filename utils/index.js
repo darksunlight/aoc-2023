@@ -1,11 +1,16 @@
 Array.prototype.sum = function(val = 0) {
     return this.reduce((a, c) => a + c, val);
 }
-Array.prototype.max = function() {
-    return Math.max(...this);
+Array.prototype.product = function() {
+    return this.reduce((a, c) => a * c, 1);
+}
+Array.prototype.max = function(key = "") {
+    if (key === "") return Math.max(...this);
+    return this.sort((a, b) => b[key] - a[key])[0][key];
 };
-Array.prototype.min = function() {
-    return Math.min(...this);
+Array.prototype.min = function(key = "") {
+    if (key === "") return Math.min(...this);
+    return this.sort((a, b) => a[key] - b[key])[0][key];
 };
 Array.prototype.toInt = function() {
     return this.map(x => +x);
