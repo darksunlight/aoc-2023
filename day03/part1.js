@@ -15,8 +15,8 @@ input.map((l, i) => {
 const sum = numbers.filter(([ny, nx, nl, num]) => {
     return symbols.some(([y, x]) => {
         return [y-1, y, y+1].some(i => {
-            return i < -1 || i >= input.length || [x-1, x, x+1].some(j => {
-                return j < -1 || j >= input[0].length || (i == ny && Array.from({length:nl}, (_, i) => nx+i).includes(j));
+            return i < 0 || i >= input.length || [x-1, x, x+1].some(j => {
+                return j < 0 || j >= input[0].length || (i == ny && Array.from({length:nl}, (_, i) => nx+i).includes(j));
             });
         });
     });
